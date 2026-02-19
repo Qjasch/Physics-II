@@ -13,38 +13,45 @@
     \item \dots
 \end{enumerate}
 
-\section{Titel}
+\section{Weitwurf im See}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $x = \frac{\lambda \Delta t}{T}$, wobei $T$: Periodendauer, $\Delta t$ Zeit von Auftreffen bis Auftreffen der Wellen aufs Ufer. 
+    \item Da die Energie sich kreisförmig ausbreitet, nimmt sie quadratich mit dem Abstand ab, daher verkleinert sich die Amplitude. Bei einer eindimensionalen Ausbreitung würde die Energie linear mit dem Abstand abnehmen und die Welle wäre bei gleichem Abstand stärker.
 \end{enumerate}
 
-\section{Titel}
+\section{Seilwelle}
+$F = \mu g x  \implies \Delta t = \int_{0}^{L} \frac{dx}{v(x)} = \int_{0}^{L} \frac{dx}{\sqrt{\frac{F(x)}{\mu}}} = \int_{0}^{L} \frac{dx}{\sqrt{\frac{\mu g x}{\mu}}} = \int_{0}^{L} \frac{dx}{\sqrt{gx}} = \dul{2\sqrt{\frac{L}{g}}}$
+
+\section{Transversal gekoppelte Massepunkte}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $F_{m_1} = m \ddot{y_1} = -ky_1 + l(y_2 - y_1) \implies y_1 = \frac{m \ddot{y_1} - ly_2}{k + l}$, \\
+    $F_{m_2} = m \ddot{y_2} = -ky_2 + l(y_1 - y_2) \implies y_2 = \frac{m \ddot{y_2} - ly_1}{k + l}$ \\
+    
+    \item $\delta := y_2 - y_1 = \frac{m \ddot{y_2} - ly_1 - m \ddot{y_1} + ly_2}{k + l} 
+    = \frac{m \ddot{\delta} + l\delta}{k + l} 
+    \implies \ddot{\delta} = \delta \frac{k - 2l}{m}$ \\ 
+    Ansatz: $\delta = A_{\delta} \cos(\omega_{\delta} t + \Delta_{\delta})$. 
+    Es folgt $\omega_{\delta} = \sqrt{\frac{k - 2l}{m}}$. 
+    Die Anfangsbedingungen implizieren $\Delta_{\delta} = 0, A_{\delta} = -y_1^0$.
+    
+    \item $\sigma := y_1 + y_2 = \frac{m \ddot{y_1} - ly_2 + m \ddot{y_2} - ly_1}{k - l}
+    = \frac{\ddot{\sigma} - l \sigma}{k - l} \implies \ddot{\sigma} = \sigma \frac{k}{m}$ \\
+    Ansatz: $\sigma = A_{\sigma} \cos(\omega_{\sigma} t + \Delta_{\sigma})$. 
+    Es folgt $\omega_{\sigma} = \sqrt{\frac{k}{m}}$. 
+    Die Anfangsbedingungen implizieren $\Delta_{\sigma} = 0, A_{\sigma} = y_1^0$.
+    
+    \item $y_1(t) = A_{\delta} \cos(\omega_{\delta} t) - A_{\sigma} \cos(\omega_{\sigma} t)$, $y_2(t) = -A_{\delta} \cos(\omega_{\delta} t) + A_{\sigma} \cos(\omega_{\sigma} t)$
 \end{enumerate}
 
-\section{Titel}
+\section{Polarisation}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
+    \item Die Schwingungsebene ist um $\theta$ gekippt zur $xz$-Ebene. 
+    \item $\abs{\xi} = A \sqrt{\cos^2(kz - \omega t + \delta_h) + \cos^2(kz - \omega t + \delta_v)}
+    = A \sqrt{\cos^2(kz - \omega t + \delta_h) + \sin^2(kz - \omega t + \delta_h)} = A$ \\
+    Rotations entgegen dem Uhrzeigersinn. Variieren der Phasenverschiebung um $\pi$ ändert die Drehrichtung.
     \item \dots
+    \item Die Aneregung sollte Kreisförmig sein. 
+    
 \end{enumerate}
 
-\section{Titel}
-\begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
-\end{enumerate}
-
-\section{Titel}
-\begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
-\end{enumerate}
 \end{document}
