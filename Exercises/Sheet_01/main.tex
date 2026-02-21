@@ -2,21 +2,61 @@
 \usepackage{notes}
 
 \begin{document}
-\stdtitle{PHYSIK II}{Serie 01}{Jakob Schildhauer}
+\stdtitle{PHYSIK II}{Serie 1}{Jakob Schildhauer}
+
+\definecolor{blue_1}{RGB}{20, 40, 120}
+\definecolor{blue_2}{RGB}{30, 60, 180}
+\definecolor{orange_1}{RGB}{120, 40, 20}
+\definecolor{orange_2}{RGB}{180, 60, 30}
 
 \section{Wellengleichung}
 \begin{enumerate}[label=\alph*)]
     \item $T = \frac{2 \pi }{\omega} = \dul{\qty{2}{\second}}, 
     f = \frac{\omega}{2 \pi} = \dul{\qty{0.5}{\hertz}}, 
     \lambda = \frac{v}{f} = \frac{2 \pi v}{\omega} = \dul{\qty{0.4}{\meter}}$
-    \item \dots 
-    \item \dots
+    \item \mbox{} \\
+    \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = middle,
+        xlabel = {$x \, [\si{\meter}]$},
+        ylabel = {$\xi \, [\si{\meter}]$},
+        xlabel style={anchor=north},
+        xtick={0, 0.4, 0.8},
+        ytick={-0.1, 0, 0.1},
+        ymin = -0.12,
+        ymax = 0.22,
+        xmin = 0,
+        xmax = 1.2,
+        domain=0:1.12,
+        samples=400,
+        width=12cm,
+        height=5cm,
+        legend pos=north east
+    ]
+    \addplot [thick, blue_1] {0.08 * sin(360 * x * (1 / 0.4) + 180 * 2)};
+    \addlegendentry{$t_1$}
+
+    \addplot [thick, blue_2] {0.08 * sin(360 * x * (1 / 0.4) + 180 * 3)};
+    \addlegendentry{$t_2$}
+
+    \addplot [thick, orange_1] {0.08 * sin(360 * x * (1 / 0.4) + 180 * 4.5)};
+    \addlegendentry{$t_3$}
+
+    \addplot [thick, orange_2] {0.08 * sin(360 * x * (1 / 0.4) + 180 * 7.5)};
+    \addlegendentry{$t_4$}
+
+    \end{axis}
+    \end{tikzpicture}
+
+    \item $\xi(\qty{0.3}{\meter}, t) = - \qty{0.08}{\meter} \cdot \cos\left(\pi \unit{\per \second} t \right)$, \quad
+    $\xi(\qty{0.8}{\meter}, t) = \qty{0.08}{\meter} \cdot \sin\left(\pi \unit{\per \second} t \right)$, \quad
+    $\xi(\qty{1}{\meter}, t) = - \qty{0.08}{\meter} \cdot \sin\left(\pi \unit{\per \second} t \right)$
 \end{enumerate}
 
 \section{Weitwurf im See}
 \begin{enumerate}[label=\alph*)]
-    \item $x = \frac{\lambda \Delta t}{T}$, wobei $T$: Periodendauer, $\Delta t$ Zeit von Auftreffen bis Auftreffen der Wellen aufs Ufer. 
-    \item Da die Energie sich kreisförmig ausbreitet, nimmt sie quadratich mit dem Abstand ab, daher verkleinert sich die Amplitude. Bei einer eindimensionalen Ausbreitung würde die Energie linear mit dem Abstand abnehmen und die Welle wäre bei gleichem Abstand stärker.
+    \item $x = \frac{\lambda \Delta t}{T}$, wobei $T$: Periodendauer, $\Delta t$: Zeit von Eintauchen bis Auftreffen der Wellen aufs Ufer. 
+    \item Da die Energie sich kreisförmig ausbreitet, nimmt sie mit dem Abstand schneller ab als bei einer eindimensionalen Ausbreitung.
 \end{enumerate}
 
 \section{Seilwelle}
@@ -24,23 +64,32 @@ $F = \mu g x  \implies \Delta t = \int_{0}^{L} \frac{dx}{v(x)} = \int_{0}^{L} \f
 
 \section{Transversal gekoppelte Massepunkte}
 \begin{enumerate}[label=\alph*)]
-    \item $F_{m_1} = m \ddot{y_1} = -ky_1 + l(y_2 - y_1) \implies y_1 = \frac{m \ddot{y_1} - ly_2}{k + l}$, \\
-    $F_{m_2} = m \ddot{y_2} = -ky_2 + l(y_1 - y_2) \implies y_2 = \frac{m \ddot{y_2} - ly_1}{k + l}$ \\
+    \item $F_{m_1} = m \ddot{y_1} = -ky_1 + l(y_2 - y_1) \implies y_1 = \frac{ly_2  - m \ddot{y_1}}{k + l}$, \\
+    $F_{m_2} = m \ddot{y_2} = -ky_2 + l(y_1 - y_2) \implies y_2 = \frac{ly_1 - m \ddot{y_2}}{k + l}$ \\
     
-    \item $\delta := y_2 - y_1 = \frac{m \ddot{y_2} - ly_1 - m \ddot{y_1} + ly_2}{k + l} 
-    = \frac{m \ddot{\delta} + l\delta}{k + l} 
-    \implies \ddot{\delta} = \delta \frac{k - 2l}{m}$ \\ 
+    \item $\delta := y_2 - y_1 = \frac{ly_1 - m \ddot{y_2} - ly_2 + m \ddot{y_1}}{k + l}
+    = \frac{- m \ddot{\delta} - l\delta}{k + l} 
+    \implies \ddot{\delta} = - \delta \frac{k + 2l}{m}$ \\ 
+
     Ansatz: $\delta = A_{\delta} \cos(\omega_{\delta} t + \Delta_{\delta})$. 
-    Es folgt $\omega_{\delta} = \sqrt{\frac{k - 2l}{m}}$. 
+    Es folgt $\omega_{\delta} = \sqrt{\frac{k + 2l}{m}}$. 
     Die Anfangsbedingungen implizieren $\Delta_{\delta} = 0, A_{\delta} = -y_1^0$.
     
-    \item $\sigma := y_1 + y_2 = \frac{m \ddot{y_1} - ly_2 + m \ddot{y_2} - ly_1}{k - l}
-    = \frac{\ddot{\sigma} - l \sigma}{k - l} \implies \ddot{\sigma} = \sigma \frac{k}{m}$ \\
+    \item $\sigma := y_1 + y_2 = \frac{ly_2  - m \ddot{y_1} + ly_1 - m \ddot{y_2}}{k + l}
+    = \frac{m\ddot{\sigma} + l \sigma}{k + l} \implies \ddot{\sigma} = \sigma \frac{k}{m}$ \\
+
     Ansatz: $\sigma = A_{\sigma} \cos(\omega_{\sigma} t + \Delta_{\sigma})$. 
     Es folgt $\omega_{\sigma} = \sqrt{\frac{k}{m}}$. 
     Die Anfangsbedingungen implizieren $\Delta_{\sigma} = 0, A_{\sigma} = y_1^0$.
     
-    \item $y_1(t) = A_{\delta} \cos(\omega_{\delta} t) - A_{\sigma} \cos(\omega_{\sigma} t)$, $y_2(t) = -A_{\delta} \cos(\omega_{\delta} t) + A_{\sigma} \cos(\omega_{\sigma} t)$
+    \item $y_1(t) = \frac12 (\sigma - \delta) 
+    = \frac12 \left(y_1^0 \cos\left(\sqrt{\frac{k}{m}} t\right) + y_1^0 \cos\left(\sqrt{\frac{k + 2l}{m}} t\right)\right)$, \\
+    $y_2(t) = \frac12 (\sigma + \delta)
+    = \frac12 \left(y_1^0 \cos\left(\sqrt{\frac{k}{m}} t\right) - y_1^0 \cos\left(\sqrt{\frac{k + 2l}{m}} t\right)\right)$ \\
+    \vspace{0.5em}
+    Die Schwingung "wandert" zwischen den beiden Massen hin und her.
+
+    \item Die Frequenz der Schwebungen ist $\Omega = \left|\omega_{\sigma} - \omega_{\delta}\right| = \left|\sqrt{\frac{k}{m}} - \sqrt{\frac{k + 2l}{m}}\right|$. Daher wird die Energie nach $t = \frac{\pi}{\Omega}$ übertragen. Eine vollständige Übertragung ist jedoch nicht garantiert, da dafür $y_1 = \dot{y_1} = 0$ gelten muss. 
 \end{enumerate}
 
 \section{Polarisation}
@@ -48,9 +97,37 @@ $F = \mu g x  \implies \Delta t = \int_{0}^{L} \frac{dx}{v(x)} = \int_{0}^{L} \f
     \item Die Schwingungsebene ist um $\theta$ gekippt zur $xz$-Ebene. 
     \item $\abs{\xi} = A \sqrt{\cos^2(kz - \omega t + \delta_h) + \cos^2(kz - \omega t + \delta_v)}
     = A \sqrt{\cos^2(kz - \omega t + \delta_h) + \sin^2(kz - \omega t + \delta_h)} = A$ \\
-    Rotations entgegen dem Uhrzeigersinn. Variieren der Phasenverschiebung um $\pi$ ändert die Drehrichtung.
-    \item \dots
-    \item Die Aneregung sollte Kreisförmig sein. 
+    Rotation entgegen dem Uhrzeigersinn. Variieren der Phasenverschiebung um $\pi$ ändert die Drehrichtung.
+    \item \mbox{} \\
+    \begin{tikzpicture}
+    \begin{axis}[
+        view={20}{20},
+        axis lines=center,
+        xlabel={$z$},
+        ylabel={$x$},
+        zlabel={$y$},
+        domain=0:2*pi,
+        xmin=0,
+        xmax=2.2*pi,
+        ymin=-2,
+        ymax=2,
+        zmax=2,
+        zmin=-2,
+        xtick={0}, 
+        ytick={0},
+        ztick={0},
+        samples=100,
+        width=15cm,
+        height=8cm,
+        colormap={blueonly}{color=(blue_1) color=(blue_2)},
+    ]
+    \addplot3[surf, opacity=0.02, samples=50, samples y=20, domain=0:2*pi, domain y=0:1] 
+        ({x}, {y*cos(deg(x))}, {y*cos(deg(x + pi / 2))});
+    \addplot3[thick, blue_1, samples y=0] 
+        ({x}, {cos(deg(x))}, {cos(deg(x + pi / 2))});
+    \end{axis}
+    \end{tikzpicture}
+    \item Die Aneregung sollte kreisförmig sein. 
     
 \end{enumerate}
 
