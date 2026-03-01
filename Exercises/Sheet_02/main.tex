@@ -1,0 +1,57 @@
+\documentclass{article}
+\usepackage{notes}
+
+\begin{document}
+\stdtitle{PHYSIK II}{Serie 2}{Jakob Schildhauer}
+
+\section{Interferenz zweier Wellen}
+\begin{enumerate}[label=\alph*)]
+    \item \dots 
+    \item \dots 
+    \item \dots
+\end{enumerate}
+
+\section{Zwei Seile}
+\begin{enumerate}[label=\alph*)]
+    \item \dots 
+    \item \dots 
+    \item \dots
+\end{enumerate}
+
+\section{Violine} // TODO: FIX c)
+\begin{enumerate}[label=\alph*)]
+    \item $\frac{\p^2 \xi}{\p t^2} - v^2 \frac{\p^2 \xi}{\p z^2} 
+    = - k^2 v^2 A \cos(kz) \cos(kvt) + A v^2 k^2 \cos(kz) \cos(kvt) = 0$
+
+    \item $\xi = \frac{A}{2} \cos(kz - kvt) + \frac{A}{2} \cos(kz + kvt)$
+    
+    \item Da der Schwingungsmodus für den Grundton nur die zwei Endpunkte als Fixpunkte haben soll, gilt $\cos \left(\frac{kl}{2}\right) = 0, 0 < k$ minimal $\iff k = \frac{\pi}{l}$. 
+    Weiter gilt $\abs{v} = \sqrt{\frac{S}{\rho}} \iff S = v^2 \rho$ und $kv = 2 \pi f \iff v = \frac{2 \pi f}{k}$. \\ 
+    Somit erhält man $F = SA = \frac{\rho 4 \pi^2 f^2 A }{k^2} = \pi \rho f^2 l^2 d^2 \approx \dul{\qty{67}{N}}$
+    % pi * 8000 * 652^2 * 0.33^2 * 0.00024^2=67.017067
+
+
+\end{enumerate}
+
+\section{Schwebung}
+\begin{enumerate}[label=\alph*)]
+    \item $\frac{1}{v^2} \frac{\partial^2 (a \phi + b \chi)}{\partial t^2} - \nabla^2 (a \phi + b \chi) 
+    = a \left( \frac{1}{v^2} \frac{\partial^2 \phi}{\partial t^2} - \nabla^2 \phi \right) + b \left( \frac{1}{v^2} \frac{\partial^2 \chi}{\partial t^2} - \nabla^2 \chi \right) = 0$
+    
+    \item Da die resultierende Welle unahängig von den ursprünglichen Phasen ist, lässt sich vereinfacht rechnen  mit $\psi_1 = \sin(\omega_1 t), \psi_2 = \sin(\omega_2 t)$. \\
+    Dann folgt $\psi := \psi_1 + \psi_2 = \sin(\omega_1 t) + \sin(\omega_2 t) = 2 \sin\left(\frac{\omega_1 + \omega_2}{2} t\right) \cos\left(\frac{\omega_1 - \omega_2}{2} t\right)$, \\
+    da $\sin \alpha + \sin \beta = 2 \sin\left(\frac{\alpha + \beta}{2}\right) \cos\left(\frac{\alpha - \beta}{2}\right)$. \\
+    Daher gilt $\omega_R = \dul{\frac{\omega_1 + \omega_2}{2}}$, $\omega_S = \dul{\frac{\omega_1 - \omega_2}{2}}$ und $\omega_\text{Schwebung} = 2 \omega_S = \dul{\omega_1 - \omega_2}$.
+\end{enumerate}
+
+\section{Michelson-Morley Experiment}
+\begin{enumerate}[label=\alph*)]
+    \item $\xi_D = A \sin(\omega t + \delta_0) + A \sin\left(\omega t + \delta_0 +\frac{4 \pi \Delta L}{\lambda}\right) = 2A \sin\left(\omega t + \delta_0 + \frac{2 \pi \Delta L}{\lambda}\right) \cos\left(\frac{2 \pi \Delta L}{\lambda}\right)$, wobei $\delta_0$ von der Anfangsphase und dem nicht modulierten Weg abhängt. \\
+    Es folgt $\dul{\omega' = \omega}$ und $\dul{A' = 2A \cos\left(\frac{2 \pi \Delta L}{\lambda}\right)}$.  
+    
+    \item $\abs{A'}$ maximal $\iff \frac{2 \pi \Delta L}{\lambda} = k \pi, k \in \mathbb{Z} \iff \dul{\Delta L = k \frac{\lambda}{2}}$ \\
+    $\abs{A'}$ minimal $\iff \frac{2 \pi \Delta L}{\lambda} = (2k+1) \pi, k \in \mathbb{Z} \iff \dul{\Delta L = (2k+1) \frac{\lambda}{2}}$  
+    
+    \item 
+\end{enumerate}
+\end{document}
