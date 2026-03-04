@@ -6,19 +6,42 @@
 
 \section{Interferenz zweier Wellen}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $\langle I_0 \rangle = \frac12 \rho \omega^2 A^2 v
+    = \frac12 \rho 4 \pi^2 f^2 A^2 v
+    \approx \dul{\qty{2.0e5}{W}}$
+    % 0.5 * 1.2 * 4 * pi^2 * 100^2 * 0.05^2 * 340=201339.929782
+
+    \item $A (\sin(kx_1 - \omega t) + \sin(kx_2 - \omega t)) = 2A \sin\left(\frac{k(x_1 + x_2)}{2} - \omega t\right) \cos\left(\frac{k(x_1 - x_2)}{2}\right)$, $k = \frac{2 \pi f}{v}$. \\
+    $\implies A' = 2A \cos\left(\frac{\pi f (x_1 - x_2)}{v}\right)$, 
+    $\langle I_1 \rangle = \frac12 \rho 4 \pi^2 f^2 (2A)^2 \cos^2\left(\frac{\pi f (x_1 - x_2)}{v}\right) v
+    \approx \dul{\qty{6.8e3}{W}}$
+    % 0.5 * 1.2 * 4 * pi^2 * 100^2 * (2*0.05)^2 * cos(pi * 100 * (5 - 10) / 340)^2 * 340=6856.389828
+
+    \item $\langle I \rangle < \frac{\langle I_0 \rangle}{4} \implies A' < \frac{A}{2} 
+    \iff \abs{\cos\left(\frac{\pi f (x_1 - x_2)}{v} + \frac{\varphi}{2} \right)} < \frac{1}{4}$ \\
+    $\iff \varphi \in \left(- 2\arccos \left(\frac14\right) - 2\frac{\pi f (x_1 - x_2)}{v}, 2 \arccos \left(\frac14\right) - 2 \frac{\pi f (x_1 - x_2)}{v}\right) \approx \dul{(\qty{-0.32}{rad}, \qty{0.69}{rad})}$
+    % (-2 * acos(1/4) - 2 * pi * 100 * (5 - 10) / 340) mod (2 * pi)=0.320561
+    % (2* acos(1/4) - 2 * pi * 100 * (5 - 10) / 340) mod (2 * pi) - 2 * pi=-0.69016
+
 \end{enumerate}
 
 \section{Zwei Seile}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $v_b = v_a \sqrt{\frac{\rho_a}{\rho_b}} \implies k_b = k_a \sqrt{\frac{\rho_b}{\rho_a}}$, 
+    $\xi_t = A_t \sin(k_bx - \omega t) = \dul{A_t \sin\left(k_a \sqrt{\frac{\rho_b}{\rho_a}} x - \omega t\right)}$, \\
+    $\xi_r = \dul{A_r \sin(k_a x + \omega t)}$. \\
+
+    \item $\xi_r(0, t) + \xi_i(0, t) = A_i \sin(\omega t) + A_r \sin(\omega t) = \xi_t(0, t) = A_t \sin(\omega t) \implies A_t = A_i + A_r$ \\
+    $\frac{\p (\xi_r(x, t) + \xi_i(x, t))}{\p t} = k_a (A_i - A_r) \cos(k_a x) \cos(\omega t) = \frac{\p \xi_t(x, t)}{\p t} = k_b A_t \cos(k_b x) \cos(\omega t)$ \\
+    $\implies k_a(A_i - A_r) = k_b A_t \iff A_i - A_r = A_t \sqrt{\frac{\rho_b}{\rho_a}}$ \\
+    $\implies A_t = \dul{\frac{2}{1 + \sqrt{\frac{\rho_b}{\rho_a}}}}, A_r = \dul{\frac{1 - \sqrt{\frac{\rho_b}{\rho_a}}}{1 + \sqrt{\frac{\rho_b}{\rho_a}}}}$
+
+    \item $A_r < 0 \iff \rho_b > \rho_a$
+    
+    % https://www.desmos.com/calculator/uch7cqrafp
 \end{enumerate}
 
-\section{Violine} // TODO: FIX c)
+\section{Violine} 
 \begin{enumerate}[label=\alph*)]
     \item $\frac{\p^2 \xi}{\p t^2} - v^2 \frac{\p^2 \xi}{\p z^2} 
     = - k^2 v^2 A \cos(kz) \cos(kvt) + A v^2 k^2 \cos(kz) \cos(kvt) = 0$
@@ -27,10 +50,8 @@
     
     \item Da der Schwingungsmodus für den Grundton nur die zwei Endpunkte als Fixpunkte haben soll, gilt $\cos \left(\frac{kl}{2}\right) = 0, 0 < k$ minimal $\iff k = \frac{\pi}{l}$. 
     Weiter gilt $\abs{v} = \sqrt{\frac{S}{\rho}} \iff S = v^2 \rho$ und $kv = 2 \pi f \iff v = \frac{2 \pi f}{k}$. \\ 
-    Somit erhält man $F = SA = \frac{\rho 4 \pi^2 f^2 A }{k^2} = \pi \rho f^2 l^2 d^2 \approx \dul{\qty{67}{N}}$
+    Somit erhält man $F = SA = \frac{\rho 4 \pi^2 f^2 A}{k^2} = \pi \rho f^2 l^2 d^2 \approx \dul{\qty{67}{N}}$
     % pi * 8000 * 652^2 * 0.33^2 * 0.00024^2=67.017067
-
-
 \end{enumerate}
 
 \section{Schwebung}
@@ -52,6 +73,17 @@
     \item $\abs{A'}$ maximal $\iff \frac{2 \pi \Delta L}{\lambda} = k \pi, k \in \mathbb{Z} \iff \dul{\Delta L = k \frac{\lambda}{2}}$ \\
     $\abs{A'}$ minimal $\iff \frac{2 \pi \Delta L}{\lambda} = (2k+1) \pi, k \in \mathbb{Z} \iff \dul{\Delta L = (2k+1) \frac{\lambda}{2}}$  
     
-    \item 
+    \item $t_1 = \frac{L}{c + v} + \frac{L}{c - v} 
+    = \frac{2Lc}{c^2 - v^2}
+    = \frac{2L}{c \left(1 - \frac{v^2}{c^2}\right)}
+    \approx \dul{\frac{2L \left(1 + \frac{v^2}{c^2}\right)}{c}}$, \\
+    $t_2 = \frac{2L \sqrt{1 + \frac{v^2}{c^2}}}{c} 
+    \approx \dul{\frac{2L\left(1 + \frac{v^2}{2c^2}\right)}{c}}$ (Pythagoras mit lateraler Verschiebung $vL/c$) \\
+
+    \item $\Delta t = t_1 - t_2 \approx \frac{Lv^2}{c^3}$, \quad
+    $\delta_\text{theo} = \frac{2\Delta t}{\lambda} \approx \frac{2Lv^2}{\lambda c^2} \approx \dul{0.44} \approx 20\delta_\text{real}$. \\
+    Demnach exitiert kein Äther (in dieser Form). 
+    % 2 * 11 * 30000^2 / (5e-7 * (2.99792458e8)^2)=0.440609
+
 \end{enumerate}
 \end{document}
