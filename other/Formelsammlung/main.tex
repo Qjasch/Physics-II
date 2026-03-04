@@ -1,0 +1,100 @@
+\documentclass{article}
+\usepackage{notes}
+
+\usepackage{tcolorbox}
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{tabularx}
+\usepackage{xcolor}
+
+\definecolor{bg1}{HTML}{043247}
+\definecolor{bg2}{HTML}{4895B5}
+\definecolor{bg3}{HTML}{874C49}
+\definecolor{bg4}{HTML}{6A6078}
+\definecolor{bg5}{HTML}{0F58A0}
+\definecolor{bg6}{HTML}{C4146B}
+\definecolor{bg7}{HTML}{E46D1B}
+\definecolor{bg8}{HTML}{097661}
+\definecolor{bg9}{HTML}{6F6F6D}
+\definecolor{bg10}{HTML}{0C5AA1}
+
+\setmonofont{Menlo}[Scale=MatchLowercase]
+
+\setstretch{1.0}
+\geometry{landscape, margin=1cm, footskip=0cm}
+\setlength{\footskip}{3.6pt}
+
+\renewcommand{\arraystretch}{0.8}
+\newcommand{\code}[1]{\texttt{#1}}
+
+\ExplSyntaxOff
+
+\tcbset{
+  colback=black!1,
+  colframe=white,
+  boxrule=1pt,
+  arc=0mm,
+  left=1mm,
+  right=1mm,
+  top=-2mm,
+  bottom=1mm,
+  enlarge left by=-2mm
+}
+
+\lstset{
+  showspaces=false,
+  showstringspaces=false,
+  showtabs=false
+  language=c,
+  basicstyle=\small\ttfamily,
+  keywordstyle=\color{bg10}\bfseries,
+  commentstyle=\color{bg9},
+  stringstyle=\color{bg7},
+  numbers=none,
+  frame=single,
+  breaklines=true
+}
+
+\raggedcolumns
+
+\begin{document}
+
+\begin{multicols*}{3} 
+\stdtitle{PHYSIK II}{Formelsammlung}{Jakob Schildhauer}
+
+\vspace{-10pt}
+
+\begin{tcolorbox}[colframe=bg1]
+\section{Grundlagen}
+\subsection{Wellengleichung}
+$\frac{1}{v^2} \frac{\partial^2 \xi}{\partial t^2} - \nabla^2 \xi = 0
+\iff \xi(\vec{r}, t) = f(\vec{r} - \vec{v} t) + g(\vec{r} + \vec{v} t)$
+\vspace{10pt}
+
+\subsection{Harmonische Welle}
+$\xi(\vec{r}, t) = A \sin(\vec{k} \cdot \vec{r} - \omega t + \varphi_0)$
+\vspace{10pt}
+
+\subsection{Beziehungen}
+$v = \lambda f = \frac{\omega}{k}$, \quad
+$k = \frac{2 \pi}{\lambda}$, \quad
+$\omega = 2 \pi f = \frac{2 \pi}{T}$
+\vspace{10pt}
+
+\subsection{Elastische Seilwelle}
+$\pm v = \sqrt{\frac{S}{\rho}}$, \quad
+$S = \frac{F}{A}$
+\vspace{10pt}
+
+\subsection{Trigonometrische Identitäten}
+$\sin \alpha + \sin \beta = 2 \sin\left(\frac{\alpha + \beta}{2}\right) \cos\left(\frac{\alpha - \beta}{2}\right)$, \\
+\vspace{10pt}
+$\cos \alpha + \cos \beta = 2 \cos\left(\frac{\alpha + \beta}{2}\right) \cos\left(\frac{\alpha - \beta}{2}\right)$
+
+\end{tcolorbox}
+
+\end{multicols*}
+
+\end{document}
+
+
