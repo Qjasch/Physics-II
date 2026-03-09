@@ -4,45 +4,61 @@
 \begin{document}
 \stdtitle{PHYSIK II}{Serie 3}{Jakob Schildhauer}
 
-\section{Titel}
+\section{Dopplereffekt bei Schallwellen}
+$\nu' = \frac{\nu c}{c - v} = \frac{\nu c }{c - y_0 \Omega \cos \Omega t} 
+\approx \nu \left(1 + \frac{y_0 \Omega \cos \Omega t}{c}\right)$. \\
+Die Phase berechnet sich aus dem moduliertem Weg als $\nu \frac{z - y_0 \sin \Omega t}{c}$. \\
+Daher gilt insgesamt $f_z(t) = \dul{A \sin \left[2 \pi \nu \left(t + \frac{z - y_0 \Omega \cos \Omega t}{c}\right)\right]}$
+
+\section{Coulombsches Gesetz}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $F = \frac{1}{4 \pi \epsilon_0} \frac{q_1 q_3}{r_1^2} + \frac{1}{4 \pi \epsilon_0} \frac{q_1 q_3}{r_2^2}
+    = \dul{\frac{1}{4 \pi \epsilon_0} \left(\frac{q_1}{\qty{25}{\micro \meter^2}} + \frac{q_2}{\qty{11}{\micro \meter^2}}\right)}$
+    % 1 / (4 * pi * 8.8541878128e-12) * 1.602176634e-19 * ()
+
+    \item $F_A = \frac{1}{4 \pi \epsilon_0} \frac{\overline{q}^2 - (2 \Delta q)^2}{r^2}, 
+    F_B = \frac{1}{4 \pi \epsilon_0} \frac{\overline{q}^2}{r^2} 
+    \implies F_B - F_A = \frac{1}{4 \pi \epsilon_0} \frac{4 (\Delta q)^2}{r^2}
+    \implies \abs{\Delta q} = r \sqrt{(F_B - F_A) \pi \epsilon_0}$, \\
+    $\abs{\overline{q}} = r \sqrt{F_B \cdot 4 \pi \epsilon_0}
+    \implies q_1 = r \left[\sqrt{F_B \cdot 4 \pi \epsilon_0} \pm \sqrt{(F_B - F_A) \pi \epsilon_0}\right]
+    \approx \dul{\qty{1.2e-15}{\coulomb} \vee \qty{-4e-16}{\coulomb}}$, 
+
+    $q_2 = r \left[\sqrt{F_B \cdot 4 \pi \epsilon_0} \mp \sqrt{(F_B - F_A) \pi \epsilon_0} \right]
+    \approx \dul{\qty{-4e-16}{\coulomb} \vee \qty{1.2e-15}{\coulomb}}$
+
+    % 2e-6 *  (sqrt((1.08e-9 + 0.36e-9) * pi * 8.8541878128e-12) + sqrt(0.36e-9 * 4 * pi * 8.8541878128e-12))=0
+
+    \item $n \approx \frac{-\abs{\Delta q}}{q_e} = \frac{-r \sqrt{(F_B - F_A) \pi \epsilon_0}}{q_e}
+    \approx \dul{\qty{2500}{}}$
 \end{enumerate}
 
-\section{Titel}
+\section{Kugelschalen}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item Nach Maxwell 1 ist $E_{r < r_A} = \dul{\qty{0}{\newton \per \coulomb}}$, da keine Ladung eingeschlossen ist und somit der Gradient $0$ ist, was ein konstantes und wegen der Symmetrie $0$-Feld impliziert. 
+    
+    \item Da das Feld einer Kugelschale gleich dem eines Punktes derselben Ladung ist, gilt $E_{r > r_B} = \dul{\frac{1}{4 \pi \epsilon_0} \frac{Q_A + Q_B}{r}}$.
+    
+    \item $\frac{Q_A}{Q_B} = \dul{-1}$. 
+    
+    \item \mbox{} \\ \vspace{-1cm}\includegraphics[width=0.35\textwidth]{concentric_spheres.png}
 \end{enumerate}
 
-\section{Titel}
+\section{Halbkreisförmiger Stab}
+$E = \int_{0}^{\pi} \frac{q\sin \varphi \, d\varphi}{4 \pi \epsilon_0 r}
+= \frac{q}{2 \pi \epsilon_0 r} \approx \dul{\qty{18}{\newton \per \coulomb}}$
+% 1e-9 / (2 * pi * 8.8541878128e-12 * 1)=17.975104
+
+\section{Schwingung eines geladenen Teilchens}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $E(x) = \int_{0}^{2 \pi} \frac{qx \, d\varphi }{4 \pi \epsilon_0 2 \pi (r + x)^2}
+    = \frac{qx}{4 \pi \epsilon_0 (r + x)^2} \approx \dul{\frac{qx}{4 \pi \epsilon_0 r^2}}$
+    
+    \item $F = -q E(x) = \dul{-\frac{q^2 x}{4 \pi \epsilon_0 r^2}}$
+    
+    \item $F \propto -x \implies$ harmonische Schwinung. 
+    
+    \item $\omega^2 = \frac{q^2}{4 \pi \epsilon_0 r^2 m} \implies f = \frac{\omega}{2 \pi} = \dul{\frac{q}{2 \pi r} \sqrt{\frac{1}{4 \pi \epsilon_0 m}}}$
 \end{enumerate}
 
-\section{Titel}
-\begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
-\end{enumerate}
-
-\section{Titel}
-\begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
-\end{enumerate}
-
-\section{Titel}
-\begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
-\end{enumerate}
 \end{document}
