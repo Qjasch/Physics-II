@@ -46,20 +46,20 @@ Daher gilt insgesamt $f_z(t) = \dul{A \sin \left[2 \pi \nu \left(t + \frac{z - y
 \end{enumerate}
 
 \section{Halbkreisförmiger Stab}
-$E = \int_{0}^{\pi} \frac{q\sin \varphi \, d\varphi}{4 \pi \epsilon_0 r}
-= \frac{q}{2 \pi \epsilon_0 r} \approx \dul{\qty{18}{\newton \per \coulomb}}$
-% 1e-9 / (2 * pi * 8.8541878128e-12 * 1)=17.975104
+$E = \frac{1}{\pi} \int_{0}^{\pi} \frac{q\sin \varphi \, d\varphi}{4 \pi \epsilon_0 r^2}
+= \frac{q}{2 \pi^2 \epsilon_0 r^2} \approx \dul{\qty{5.7}{\newton \per \coulomb}}$
+% 1e-9 / (2 * pi^2 * 8.8541878128e-12 * 1)=5.721653
 
 \section{Schwingung eines geladenen Teilchens}
 \begin{enumerate}[label=\alph*)]
-    \item $E(x) = \int_{0}^{2 \pi} \frac{qx \, d\varphi }{4 \pi \epsilon_0 2 \pi (r + x)^2}
-    = \frac{qx}{4 \pi \epsilon_0 (r + x)^2} \approx \dul{\frac{qx}{4 \pi \epsilon_0 r^2}}$
+    \item $E(x) = \int_{0}^{2 \pi} \frac{qx \, d\varphi }{4 \pi \epsilon_0 2 \pi r(r^2 + x^2)}
+    = \frac{qx}{4 \pi \epsilon_0 r(r^2 + x^2)} \approx \dul{\frac{qx}{4 \pi \epsilon_0 r^3}}$
     
-    \item $F = -q E(x) = \dul{-\frac{q^2 x}{4 \pi \epsilon_0 r^2}}$
+    \item $F = -q E(x) = \dul{-\frac{q^2 x}{4 \pi \epsilon_0 r^3}}$
     
     \item $F \propto -x \implies$ harmonische Schwinung. 
     
-    \item $\omega^2 = \frac{q^2}{4 \pi \epsilon_0 r^2 m} \implies f = \frac{\omega}{2 \pi} = \dul{\frac{q}{2 \pi r} \sqrt{\frac{1}{4 \pi \epsilon_0 m}}}$
+    \item $\omega^2 = \frac{q^2}{4 \pi \epsilon_0 r^2 m} \implies f = \frac{\omega}{2 \pi} = \dul{\frac{q}{2 \pi} \sqrt{\frac{1}{4 \pi \epsilon_0 m r^3}}}$
 \end{enumerate}
 
 \end{document}
