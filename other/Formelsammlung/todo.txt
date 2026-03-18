@@ -2,3 +2,12 @@
 - Stehende Wellen
 - Trig
 - Interferenz / Schwebung
+- Maxwell
+- Satz von Stokes
+- Satz von Gauss
+- Divergenz
+- Rotation
+- Gradient
+- Potentialfelder
+- Maxwell
+- Spitzeneffekt
