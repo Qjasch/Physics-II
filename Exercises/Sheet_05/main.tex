@@ -13,9 +13,13 @@
     % = \frac{\p f}{\p r} \cdot \frac{\p r}{\p y} + \frac{\p f}{\p \theta} \cdot \frac{\p \theta}{\p y}
     % = \frac{\p f}{\p r} \cdot \frac{y}{\sqrt{x^2 + y^2} } + \frac{\p f}{\p \theta} \cdot \frac{x}{x^2 + y^2}$, \\
     
-    \item Sei $z := x + yi$. 
+    \item Nach sehr langer Rechnung: $\Delta f = \frac{\partial^2 f}{\partial r^2} + \frac{1}{r}\frac{\partial f}{\partial r} + \frac{1}{r^2}\frac{\partial^2 f}{\partial \theta^2}$
+    {\tiny\emph{{\titlefont{... Left as an exercise to the reader ...}}}} \normalsize 
     
-    \item \dots
+    \item Da man per Wahl des Koordinatensystems annehmen kann, dass $p$ in $x$-Richtung liegt, ergibt sich $\phi = \frac{p \cos \theta}{4 \pi \epsilon_0 r}$ und damit 
+    $\Delta \phi = \frac{p \cos \theta}{2 \pi \epsilon_0 r^3}
+    - \frac{p \cos \theta}{4 \pi \epsilon_0 r^3}
+    - \frac{p \cos \theta}{4 \pi \epsilon_0 r^3} = 0$ für $r \neq 0$.
 \end{enumerate}
 
 \section{Strom durch Würfel}
@@ -34,7 +38,10 @@
 \end{enumerate}
 
 \section{Zylinderkondensator}
-$\phi_{12} = \frac{Q_2 - Q_1}{2 \pi \epsilon_0 r}$
+$\Delta U_{12} = \frac{Q_1 + Q_2}{2 \pi \epsilon_0 l} \ln\left(\frac{r_2}{r_1}\right)$, 
+$\Delta U_{23} = \frac{Q_2 + Q_3}{2 \pi \epsilon_0 l} \ln\left(\frac{r_3}{r_2}\right)$, 
+$C = \frac{\Delta U_{12}}{Q_1 + Q_2} + \frac{\Delta U_{23}}{Q_2 + Q_3}
+= \dul{\frac{\ln\left(\frac{r_3}{r_1}\right)}{2\pi \epsilon_0 l}}$
 
 
 \section{Verbindung von Kondensatoren}
