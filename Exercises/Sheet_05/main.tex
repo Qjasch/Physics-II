@@ -6,8 +6,16 @@
 
 \section{Laplace Operator}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
+    % \item $\frac{\p f}{\p x} 
+    % = \frac{\p f}{\p r} \cdot \frac{\p r}{\p x} + \frac{\p f}{\p \theta} \cdot \frac{\p \theta}{\p x}
+    % = \frac{\p f}{\p r} \cdot \frac{-x}{\sqrt{x^2 + y^2} } + \frac{\p f}{\p \theta} \cdot \frac{-y}{x^2 + y^2}$, \\
+    % $\frac{\p f}{\p y} 
+    % = \frac{\p f}{\p r} \cdot \frac{\p r}{\p y} + \frac{\p f}{\p \theta} \cdot \frac{\p \theta}{\p y}
+    % = \frac{\p f}{\p r} \cdot \frac{y}{\sqrt{x^2 + y^2} } + \frac{\p f}{\p \theta} \cdot \frac{x}{x^2 + y^2}$, \\
+    
+    \item Sei $z := x + yi$. 
+    
+    \item \dots
 \end{enumerate}
 
 \section{Strom durch Würfel}
@@ -22,34 +30,29 @@
     + \int_{-1}^{1} \int_{-1}^{1} -J_z((x, y, -1)) \, dx \, dy
     = \dul{\qty{24}{\milli \ampere}}$ 
     
-    \item $Q = \Delta t I_{\p V} = \dul{\qty{0.24}{\coulomb}}$
+    \item $Q = - \Delta t I_{\p V} = \dul{\qty{-    0.24}{\coulomb}}$
 \end{enumerate}
 
 \section{Zylinderkondensator}
+$\phi_{12} = \frac{Q_2 - Q_1}{2 \pi \epsilon_0 r}$
+
+
+\section{Verbindung von Kondensatoren}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $C_{Gesamt} = C_1 + C_2$, $Q_{Gesamt} = Q_1' + Q_2' = C_1 U 
+    \implies U' = \frac{Q_{Gesamt}}{C_{Gesamt}} 
+    = \frac{C_1 U}{C_1 + C_2}$. \\
+    Damit ergibt sich $Q_1' = C_1 U' = \frac{C_1^2 U}{C_1 + C_2} \approx \dul{\qty{5e-9}{\coulomb}}$ 
+    und $Q_2' = C_2 U' = \frac{C_1 C_2 U}{C_1 + C_2} \approx \dul{\qty{4.5e-8}{\coulomb}}$.
+    
+    \item $E_1 = \frac{C_1 U^2}{2} \approx \dul{\qty{1.25e-4}{\joule}}$,
+    $E_{Gesamt}' = \frac{C_{Gesamt} U'^2}{2}
+    = \frac{C_1^2 U^2}{2(C_1 + C_2)} \approx \dul{\qty{1.25e-5}{\joule}}$
 \end{enumerate}
 
-\section{Titel}
+\section{Schaltkreis mit Kondensatoren}
 \begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
-\end{enumerate}
-
-\section{Titel}
-\begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
-\end{enumerate}
-
-\section{Titel}
-\begin{enumerate}[label=\alph*)]
-    \item \dots 
-    \item \dots 
-    \item \dots
+    \item $R_{Ges} = \dul{\frac{18}{23}R}$
+    \item $C_{Ges} = \dul{\frac{32}{21}C}$
 \end{enumerate}
 \end{document}
